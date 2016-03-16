@@ -37,9 +37,10 @@ export class Game {
 
       if (moves.length === 0) {
         reject('game over');
-      } else if (moves.length === 9) {
-        this.board[4] = player;
-        resolve(4);
+      } else if (moves.length >= 8 || moves.length === 1) {
+        const index = moves[0];
+        this.board[index] = player;
+        resolve(index);
       } else {
         const board = Array.from(this.board);
         const [, move] = this.mmax(board, player, opponent, 1);
