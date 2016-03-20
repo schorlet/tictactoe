@@ -26,12 +26,34 @@ function play(game, player) {
 describe('Game', () => {
 	it('should stale', () => {
 		const game = new Game(PLAYER, OPPONENT);
-		play(game, PLAYER)
+		return play(game, PLAYER)
 		.then((winner) => {
 			throw new Error(`${winner} win`);
 		})
 		.catch(err => {
 			console.error(err);
+			const expected = ['X', 'X', 'O', 'O', 'O', 'X', 'X', 'O', 'O'];
+			if (game.board.join(',') !== expected.join(',')) {
+				throw new Error(`want: ${expected}, got:  ${game.board}`);
+			}
+		});
+	});
+	it('X should win', () => {
+		const game = new Game(PLAYER, OPPONENT);
+		const und = undefined;
+		game.board = [
+			und, und, und,
+			'0', 'X', und,
+			und, und, und,
+		];
+		return play(game, OPPONENT)
+		.then((winner) => {
+			if (winner !== 'X') {
+				throw new Error(`${winner} win`);
+			}
+		})
+		.catch(err => {
+			throw new Error(err);
 		});
 	});
 });
