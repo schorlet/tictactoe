@@ -38,6 +38,7 @@ h1 {
 .board_outer {
     flex: none;
     height: 90vh;
+    cursor: default;
 }
 
 .board_inner {
@@ -51,6 +52,8 @@ h1 {
     width: 90vmin;
     height: 90vmin;
     background: red;
+    min-width: 200px;
+    min-height: 200px;
 }
 
 .board_inner > div {
@@ -62,6 +65,7 @@ h1 {
     text-align: center;
     line-height: 29vmin;
     font-size: 11vmin;
+    font-weight: bold;
 }
 
 .board_inner > div:nth-child(odd) {

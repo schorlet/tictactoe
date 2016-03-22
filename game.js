@@ -17,6 +17,7 @@ export class Game {
 		}
 
 		this.board[index] = this.player1;
+		return this.winner();
 	}
 
 	/*

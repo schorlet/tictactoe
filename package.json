@@ -4,7 +4,7 @@
 	"description": "tictactoe",
 	"author": "schorlet",
 	"license": "ISC",
-	"main": "main.js",
+	"main": "game.js",
 	"jspm": {
 		"devDependencies": {
 			"babel": "npm:babel-core@^5.8.24",
@@ -19,7 +19,7 @@
 		"eslint-config-airbnb": "^6.1.0"
 	},
 	"scripts": {
-		"lint": "eslint game.js game_test.js test.js",
+		"lint": "eslint game.js game_test.js test.js main.js",
 		"test": "mocha --delay test.js"
 	}
 }
