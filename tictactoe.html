@@ -1,0 +1,52 @@
+<style>
+	.board_outer {
+		flex: none;
+		height: 90vh;
+		cursor: default;
+	}
+
+	.board_inner {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		/* alignment along the main axis */
+		justify-content: space-around;
+		/* alignment along the cross axis */
+		align-content: space-around;
+		width: 90vmin;
+		height: 90vmin;
+		background: red;
+		min-width: 200px;
+		min-height: 200px;
+	}
+
+	.board_inner > div {
+		flex: none;
+		width: 29vmin;
+		height: 29vmin;
+		background: green;
+		border: 1px solid yellow;
+		text-align: center;
+		line-height: 29vmin;
+		font-size: 11vmin;
+		font-weight: bold;
+	}
+
+	.board_inner > div:nth-child(odd) {
+		background: blue;
+	}
+</style>
+
+<div class="board_outer">
+	<div class="board_inner">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>

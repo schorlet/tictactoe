@@ -1,25 +1,29 @@
 {
-	"name": "tictactoe",
-	"version": "0.0.1",
-	"description": "tictactoe",
-	"author": "schorlet",
-	"license": "ISC",
-	"main": "game.js",
-	"jspm": {
-		"devDependencies": {
-			"babel": "npm:babel-core@^5.8.24",
-			"babel-runtime": "npm:babel-runtime@^5.8.24",
-			"core-js": "npm:core-js@^1.1.4"
-		}
-	},
-	"devDependencies": {
-		"jspm": "^0.16.31",
-		"mocha": "^2.4.5",
-		"eslint": "^2.4.0",
-		"eslint-config-airbnb": "^6.1.0"
-	},
-	"scripts": {
-		"lint": "eslint game.js game_test.js test.js main.js",
-		"test": "mocha --delay test.js"
-	}
+  "name": "tictactoe",
+  "version": "0.0.1",
+  "description": "tictactoe",
+  "author": "schorlet",
+  "license": "ISC",
+  "main": "game.js",
+  "jspm": {
+    "dependencies": {
+      "text": "github:systemjs/plugin-text@^0.0.7",
+      "webcomponents.js": "npm:webcomponents.js@^0.7.21"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "devDependencies": {
+    "jspm": "^0.16.31",
+    "mocha": "^2.4.5",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.1.0"
+  },
+  "scripts": {
+    "lint": "eslint game.js game_test.js test.js main.js tictactoe.js",
+    "test": "mocha --delay test.js"
+  }
 }
