@@ -9,10 +9,6 @@ html, body {
     margin: 0;
 }
 
-/*
-https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-*/
-
 body {
     background: black;
     color: lightblue;
@@ -20,6 +16,8 @@ body {
     flex-direction: row;
     /* alignment along the main axis */
     justify-content: center;
+	/* alignment along the cross axis */
+    align-items: flex-start;
 }
 
 section {
@@ -33,4 +31,17 @@ h1 {
     margin: auto;
     flex: none;
     height: 10vh;
+}
+
+tic-tac-toe:unresolved {
+	opacity: 0;
+}
+
+tic-tac-toe {
+    margin: auto;
+    flex: none;
+    width: 90vmin;
+    height: 90vmin;
+	opacity: 1;
+    transition: opacity 300ms;
 }
