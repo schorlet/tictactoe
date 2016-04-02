@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 /* eslint no-console: "off" */
 
-import { Game } from './game.js';
+import { Game } from 'component/game.js';
 
 const PLAYER = 'O';
 const OPPONENT = 'X';

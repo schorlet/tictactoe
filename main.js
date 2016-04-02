@@ -1,4 +1,4 @@
 /* eslint-env: browser */
 
-import { TicTacToe } from './tictactoe.js';
+import { TicTacToe } from 'component/tictactoe.js';
 document.registerElement('tic-tac-toe', TicTacToe);

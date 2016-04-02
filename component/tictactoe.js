@@ -2,8 +2,8 @@
 
 import 'webcomponents.js';
 
-import { Game } from './game.js';
-import template from './tictactoe.html!text';
+import { Game } from 'component/game.js';
+import template from 'component/tictactoe.html!text';
 
 export class TicTacToe extends HTMLElement {
 	createdCallback() {

@@ -4,7 +4,7 @@
 
 const System = require('jspm');
 
-System.import('./game_test.js')
+System.import('component/test/game_test.js')
 .then(() => {
 	run();
 })
