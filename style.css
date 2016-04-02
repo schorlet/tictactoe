@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    background: black;
+    background: darkslategrey;
     color: lightblue;
     display: flex;
     flex-direction: row;
@@ -42,6 +42,6 @@ tic-tac-toe {
     flex: none;
     width: 90vmin;
     height: 90vmin;
-	opacity: 1;
-    transition: opacity 300ms;
+	opacity: 0.8;
+	transition: opacity 300ms;
 }
