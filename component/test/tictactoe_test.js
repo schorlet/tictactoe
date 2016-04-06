@@ -111,7 +111,7 @@ describe('TicTacToe x10', () => {
 	}
 });
 
-// useless here, but wait for babel to load
+// useless here, but waits for babel to load
 import 'component/tictactoe.js';
 
 setTimeout(() => {
