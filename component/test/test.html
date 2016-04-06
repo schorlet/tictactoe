@@ -3,16 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Mocha Test</title>
+
+        <script src="/node_modules/webcomponents.js/webcomponents.min.js"></script>
+		<script src="/jspm_packages/system.js"></script>
+		<script src="/config.js"></script>
+
+        <link rel="import" href="/component/tictactoe.html">
+
         <link rel="stylesheet" href="/node_modules/mocha/mocha.css"/>
         <script src="/node_modules/mocha/mocha.js"></script>
     </head>
     <body style="background:darkslategrey;">
 		<div id="mocha"></div>
 
-		<script src="/jspm_packages/system.js"></script>
-		<script src="/config.js"></script>
 		<script>
-		System.import('/component/test/tictactoe_test.js');
+		System.import('component/test/tictactoe_test.js');
 		</script>
     </body>
 </html>

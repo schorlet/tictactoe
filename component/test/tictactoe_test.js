@@ -1,9 +1,6 @@
 /* eslint-env: browser */
 /* eslint-env mocha */
 
-import { TicTacToe } from 'component/tictactoe.js';
-document.registerElement('tic-tac-toe', TicTacToe);
-
 mocha.setup({ ui: 'bdd' });
 
 describe('TicTacToe', () => {
@@ -14,15 +11,8 @@ describe('TicTacToe', () => {
 		xFoo = document.createElement('tic-tac-toe');
 		xFoo.style.width = '200px';
 		xFoo.style.height = '200px';
-
-		cells = xFoo.shadowRoot.querySelectorAll('.board_inner > div');
 		document.body.appendChild(xFoo);
-
-		return new Promise((resolve) => {
-			setTimeout(() => {
-				resolve();
-			}, 300);
-		});
+		cells = xFoo.shadowRoot.querySelectorAll('.board_inner > div');
 	});
 
 	after(() => {
@@ -30,7 +20,7 @@ describe('TicTacToe', () => {
 	});
 
 	it('should work', () => {
-		if (xFoo.tagName.toLowerCase() !== 'tic-tac-toe') {
+		if (xFoo.tagName !== 'TIC-TAC-TOE') {
 			throw new Error('bad tagName');
 		}
 	});
@@ -58,7 +48,7 @@ describe('TicTacToe', () => {
 					reject('cells[3] is empty');
 				}
 				resolve();
-			}, 200);
+			}, 1);
 		});
 	});
 
@@ -89,7 +79,7 @@ describe('TicTacToe', () => {
 				} else {
 					reject('cells[1] is not empty');
 				}
-			}, 100);
+			}, 1);
 		});
 	});
 
@@ -115,15 +105,16 @@ describe('TicTacToe x10', () => {
 				setTimeout(() => {
 					document.body.removeChild(xFoo);
 					resolve();
-				}, 300);
+				}, 100);
 			});
 		});
 	}
 });
 
-window.addEventListener('WebComponentsReady', () => {
-	// imports are loaded and elements have been registered
-	// console.log('Components are ready');
+// useless here, but wait for babel to load
+import 'component/tictactoe.js';
+
+setTimeout(() => {
 	mocha.checkLeaks();
 	mocha.run();
-});
+}, 1);

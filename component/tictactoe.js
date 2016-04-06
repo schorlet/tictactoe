@@ -1,16 +1,15 @@
 /* eslint-env: browser */
 
-import 'webcomponents.js';
-
 import { Game } from 'component/game.js';
-import template from 'component/tictactoe.html!text';
 
 export class TicTacToe extends HTMLElement {
 	createdCallback() {
 		this.player1 = 'X'; // &#10060;
 		this.player2 = 'O';
 
-		this.createShadowRoot().innerHTML = template;
+		const template = this.document.querySelector('template');
+		const node = this.document.importNode(template.content, true);
+		this.createShadowRoot().appendChild(node);
 	}
 
 	attachedCallback() {

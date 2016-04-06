@@ -1,58 +1,73 @@
-<style>
-	:host {
-		display: inline-block;
-	}
+<template>
+	<style>
+		:host {
+			display: inline-block;
+		}
 
-	.board_outer {
-		flex: none;
-		width: 100%;
-		height: 100%;
-		cursor: default;
-	}
+		.board_outer {
+			flex: none;
+			width: 100%;
+			height: 100%;
+			cursor: default;
+		}
 
-	.board_inner {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		/* alignment along the main axis */
-		justify-content: space-around;
-		/* alignment within the cross axis */
-		align-content: space-around;
-		width: 100%;
-		height: 100%;
-		background: red;
-		min-width: 200px;
-		min-height: 200px;
-	}
+		.board_inner {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			/* alignment along the main axis */
+			justify-content: space-around;
+			/* alignment within the cross axis */
+			align-content: space-around;
+			width: 100%;
+			height: 100%;
+			background: red;
+			min-width: 200px;
+			min-height: 200px;
+		}
 
-	.board_inner > div {
-		display: flex;
-		width: 31%;
-		height: 31%;
-		background: green;
-		border: 1px solid yellow;
-		justify-content: center;
-		align-items: center;
-		font-size: 11vh;
-		font-weight: bold;
-		color: lightblue;
-	}
+		.board_inner > div {
+			display: flex;
+			width: 31%;
+			height: 31%;
+			background: green;
+			border: 1px solid yellow;
+			justify-content: center;
+			align-items: center;
+			font-size: 11vh;
+			font-weight: bold;
+			color: lightblue;
+		}
 
-	.board_inner > div:nth-child(odd) {
-		background: blue;
-	}
-</style>
+		.board_inner > div:nth-child(odd) {
+			background: blue;
+		}
+	</style>
 
-<div class="board_outer">
-	<div class="board_inner">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+	<div class="board_outer">
+		<div class="board_inner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</div>
-</div>
+</template>
+
+<script>
+(function(window, document) {
+	var thatDoc = document;
+	var thisDoc = (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+
+	System.import('component/tictactoe.js')
+	.then(function(m) {
+		m.TicTacToe.prototype.document = thisDoc;
+		window.TicTacToe = document.registerElement('tic-tac-toe', m.TicTacToe);
+	});
+})(window, document);
+</script>
