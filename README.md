@@ -8,6 +8,7 @@ Install
 
 ```sh
 $ npm install
+$ ./node_modules/jspm/jspm.js install
 ```
 
 Run
